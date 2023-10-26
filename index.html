@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>declan carveth</title>
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" href="favicon.ico">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        
+    </head>
+    <body>
+        
+        <div class="header">
+            <h1>Declan Carveth</h1>
+            <h2>bsc games development</h2>
+            <div class="nav">
+                <a href="#top" name="top">Me</a>
+                <a href="#games" name="games">Games&Dev</a>
+                <a href="#audio" name="audio">Audio</a>
+                <a href="#design" name="design">Design</a>
+                <a href="#contact" name="contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="panel" style="background-image: url('./img/me.jpg');" id="top">
+                <h1>heya</h1>
+                <p>
+                    I'm Declan and I make computery things on computers.<br>
+                    This is a webzone I made with a computer to document that.
+                </p> 
+            </div>
+            
+            <div class="panel slab" id="games">
+                <div>
+                    <h1>Games</h1>
+                    <p>
+                        here are some games that i've worked on. <br>
+                        i'm passionate about game design and a strong coder. <br>
+                        also featured here are various programming projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="panel" style="background-image: url('./img/gambit.jpg');">
+                <h1>Gambit</h1>
+                <p>
+                    Medieval-themed isometric turn-based-strategy game with unique tactics rethought from the ground-up.
+                    
+                </p>
+                <p>
+                    We made Gambit in Unity as a team of 6. I primarily worked on programming for gameplay and back-end systems as well as some UI design.
+                    The game was originally made for a uni project but we've continued working on it, and plan to release the game independently on PC and mobile.
+                </p>
+                <p>
+                    The original version of this game was featured in the <a href="https://showcase.gamesstudio.org/autumn-2022/" target="_blank">Autumn 2022 UTS Games Showcase</a> and we won the <a href="https://www.gamesstudio.org/articles/winners-6th-annual-uts-student-games-showcase" target="_blank">People's Choice award</a>.
+                </p>
+                <a href="https://youtu.be/i984j-MjHsc" style="background-color: #41bd2b;" target="_blank">
+                    Trailer
+                </a> 
+                <a href="https://baxterjdulieu.itch.io/gambit" style="background-color: #41bd2b;" target="_blank">
+                    View early version on itch.io
+                </a>
+            </div>
+            
+            <div class="panel" style="background-image: url('./img/hmtest.jpg');">
+                <h1>Heavy Metal</h1>
+                <p>
+                    In Heavy Metal, you wield a giant sword and must defeat hoards of foes of many types, each with various defences requiring a different attack strategy. The sword is controlled with the mouse, a unique control method that creates physics-based mayhem. You have three abilities that each support your mobility in different ways - a jump to leap above enemies, a slow-motion speed burst to dodge enemies and help with timing your attacks, and a risky dash move.
+                </p>
+                <p>
+                    This project began life as a uni assignment where I played a lead role as both a programmer and designer. We're about to begin rebuilding Heavy Metal from the ground up as a more arcade-style mobile game, with endless gameplay and a deeper progression system.
+                </p>
+                <p>
+                    The original version of this game was featured in the <a href="https://showcase.gamesstudio.org/autumn-2021/" target="_blank">Autumn 2021 UTS Games Showcase</a>.
+                </p>
+                <a href="https://www.youtube.com/watch?v=Ka4pO-Zzc0M" style="background-color: #fd0970;" target="_blank">
+                    Trailer
+                </a> 
+                <a href="https://seal-team-sick.itch.io/heavy-metal" style="background-color: #fd0970;" target="_blank">
+                    Play online in browser!
+                </a>
+            </div> 
+            
+            <div class="panel" style="background-image: url('./img/inertia.jpg');">
+                <h1>Project Inertia</h1>
+                <p>
+                    Project Inertia is a 3D action platformer where you are tasked with zooming through levels to deliver packages as quickly as possible. You are armed with your Surf-Sword, both a defensive weapon and a mode of transportation. You can toggle between two different control methods; on-foot is best for getting through tricky platforming courses with tight jumps, and surfing mode is better for speed and style, inspired by skating games.
+                </p>
+                <p>
+                    My contribution was for this project was primarily as a gameplay programmer. As part of this project, we collaborated with music and sound design students, working with them to bring our vision to life and integrating their content into our game through FMOD. 
+                </p>
+                <p>
+                    The original version of this game was featured in the <a href="https://www.gamesstudio.org/articles/sound-project-showcase-celebrating-6-years-successful-collaboration" target="_blank">2022 UTS Sound Project Showcase</a>.
+                </p>
+                <a href="https://david-s-schutte.itch.io/projectinertia" style="background-color: #233344;" target="_blank">
+                    Download on itch.io
+                </a>
+            </div>
+
+            
+            <div class="panel" style="background-image: url('./img/remote.jpg');" id="_ras">
+                <h1>Remote Object System</h1>
+                <p>
+                    This is a system I designed for Unity projects to communicate with Raspberry Pi devices over a local network. I created a simple protocol to network a host device to many child devices. I primarily experimented with audio, making physical devices play sounds to reflect gameplay. I also implemented interfacing with GPIO, allowing you to control LEDs and other basic electronics. My intent is that developers can cheaply and easily use off-the-shelf electronics, 3D-printing, etc. to create a novel physical representation of their games. It's theoretically scalable to any engine or device, and almost anything is possible functionality-wise too. I provide instructions on how to add extensions to the package I've developed, however the backend for this isn't particularly elegant.
+                </p>
+                <p>
+                    The documentation is rock-solid and I break down all the systems at play pretty thoroughly. I produced this for a self-directed study in my last semester at university. As niche as it is, it was one of my favourite projects at uni, and I learnt a lot about networking and problem-solving through iterative development. The demo video is a bit rough, but it gives an okay presentation on the features of the system. (2023)
+                </p>
+                <a href="https://www.youtube.com/watch?v=VQzF7XMPIs4" target="_blank">
+                    Video demo
+                </a>
+                <a href="https://docs.google.com/document/d/1vxw3bwshiR6wFl5Oz703KQuOw_lAEdyQDxYVRqpCFGk/edit" target="_blank">
+                    Documentation
+                </a>
+            </div>
+            
+            <div class="panel" id="hovergallery" style="background-image: url('./img/archery.jpg');">
+                <h1>other game projects</h1>
+                
+                
+                <!-- A IS FOR ARCHERY -->
+                <p id='archery'>
+                    <a href="https://delcanprobably.itch.io/a-for-archery" target="_blank"><b>A is for Archery</b></a> - 
+                    A proof-of-concept prototype for an archery-themed turn-based-strategy game. Each turn you can give your squad two actions, each of these actions may either be to MARCH or FIRE. This was made in an afternoon for fun :). (Unity, 2023)
+                </p>
+                
+                <!-- NOCLIP -->
+                <p id='noclip'>
+                    <a href="https://delcanprobably.itch.io/noclip" target="_blank"><b>Noclip</b></a> - 
+                    Noclip is a game I originally made in 2021 during COVID lockdowns as a silly multiplayer game to play with my friends. The concept: a free-for-all FPS where everyone has no-clip. We never actually ended up playing it, but all the same this was my first time making an online multiplayer game. The implementation is a little bodgy and anti-cheat hasn't even been considered, but it supports a listen server for games over the internet using Unity MLAPI back when it was in Beta. I have no idea how balanced it is, but it's hopefully a bit of fun for some crazy multiplayer shenanigans! (Unity, 2021)
+                </p>
+                
+                <!-- QUACK -->
+                <p id='quack'>
+                    <b>Quack</b> - 
+                    This is an online multiplayer FPS I made during university to demonstrate a high technical ability in Unreal Engine and game programming. Players compete to score as many kills as possible! It features a procedurally generated arena with randomised weapons. Whilst there's no demo available for this game, <a href="https://www.youtube.com/watch?v=qBNiLmyw2TI">here</a> is a video where I run through the technical side of the level generation system. (Unreal Engine 4, 2021)
+                </p>
+                
+                <!-- PACSTUDENT -->
+                <p id='superpac'>
+                    <a href="https://delcanprobably.itch.io/pacstudent-igd" target="_blank"><b>SUPERPAC</b></a> - 
+                    Way back in my first year of uni, we were tasked to make a remake of Pac-Man, with a bonus 5 marks for adding bonus features. I made a whole mode based on the game SUPERHOT, where you fly around the Pac-Man map shooting the ghosts. I was one of only four first-year projects featured in that semester's <a href="https://showcase.gamesstudio.org/spring-2020/">UTS Games Showcase</a>. (Unity, 2020)
+                </p>
+                
+                <!-- HELICOPTER GAME -->
+                <p id='helicopter'>
+                    <a href="https://delcanprobably.itch.io/helicopter-game" target="_blank"><b>Helicopter Game</b></a> - 
+                    Based on the Atari 2600 game M*A*S*H, this simple arcade game was made solo for a one-week university task, and I got a little carried away adding extra features and polish. (Unity, 2022)
+                </p>
+
+                <p>
+                    Check out my <a href="https://delcanprobably.itch.io" target="_blank">itch.io</a> to see even more of my games.
+                </p>
+
+            </div>
+
+
+            
+            <div class="panel slab" id="audio">
+                <div>
+                    <h1>audio</h1>
+                    <p>
+                        i am an amateur musician and music producer. <b style="font-style: normal;">🎧🎸</b> <br> <!-- this is a bit awful but the emojis go italic otherwise -->
+                        i'm also very familiar with audio technology and have made complex audio systems for games.
+                    </p>
+                </div>
+            </div>
+
+            <div class="panel" style="background-image: url('./img/apryl.jpg');">
+                <h1>apryl</h1>
+                <p>Apryl is an experimental electronic music project I've been releasing music under since 2021. I mostly use it to explore ambient soundtrack-like soundscapes and complex rhythmic ideas. An album is coming out very soon!</p>
+
+                <iframe style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=4188262275/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless><a href="https://apryl.bandcamp.com/track/flow">Flow by Apryl</a></iframe>
+
+                <iframe style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=306067544/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless><a href="https://apryl.bandcamp.com/track/astra">Astra by Apryl</a></iframe>
+
+                <iframe style="border: 0; width: 300px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/track=1610167880/size=large/bgcol=333333/linkcol=0f91ff/minimal=true/transparent=true/" seamless><a href="https://apryl.bandcamp.com/track/april">April by Apryl</a></iframe>
+                
+                <br>
+
+                <a href="https://apryl.bandcamp.com" style="background-color: #62bad0;" target="_blank">
+                    Bandcamp
+                </a>
+                <a href="https://www.youtube.com/@aprylprobably" style="background-color: #62bad0;" target="_blank">
+                    YouTube
+                </a>
+                <a href="https://open.spotify.com/artist/5sz89QBmdCDT5j25TeGh5o" style="background-color: #62bad0;" target="_blank">
+                    Spotify
+                </a>
+            </div>
+            
+            
+            <div class="panel" style="background-image: url('./img/gambit2.jpg');">
+                <h1>Gambit and other games</h1>
+                <p>
+                    As well as the programming, I also designed Gambit's Unity audio system. Whilst the audio itself was mostly outsourced from royalty-free sources, I compiled it all together and used my knowledge from music production to make sure it came out sounding great.
+                </p>
+                
+                <audio controls src="/media/gambit.mp3">Brief recording of audio from the game Gambit</audio>
+                <br><br>
+
+                <p>
+                    Also see my <a href="#_ras">Remote Audio System</a> mentioned above for another novel experiment in game audio.
+                </p>
+                <p>
+                    I'm keen to expand my experience with audio in games including working with FMOD/Wwise, and I would also love to tackle in writing an original soundtrack for a game.
+                </p>
+                
+            </div>
+
+            <div class="panel" style="background-image: url('./img/delcanr.jpg');">
+                <h1>Other Music Stuff</h1>
+                <p>Prior to Apryl starting up I released music as Delcan, and continue to use that name to publish music content on my YouTube channel from time-to-time. I'll likely have many other music projects going on in the future.</p>
+
+                <iframe style="border: 0; width: 400px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/album=353980566/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://delcanprobably.bandcamp.com/album/album-2">Album 2 by Delcan</a></iframe>
+
+                <iframe width="430" height="300" src="https://www.youtube-nocookie.com/embed/LY5H3gSPS-8?si=d2ZwuhrynvofNOFT&amp;start=136" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <br><br>
+            
+                <a href="https://www.youtube.com/@delcanprobably/videos" style="background-color: red;">My YouTube channel</a>
+
+            </div>
+
+            
+
+            <div class="panel slab" id="design">
+                <div>
+                    <h1>design</h1>
+                    <p>
+                        i'm passionate about UX and visual design. <br>
+                        i have an eye for making things look and feel great. <br>
+                        here are some projects i've been involved with.
+                    </p>
+                </div>
+            </div>
+
+            <div class="panel" style="background-image: url('./img/thispsap.jpg');">
+                <h1>this website</h1>
+                <p>
+                    I wouldn't call myself a web developer, but I've created a number of sites for my own personal projects, including this one.
+                </p>
+                <p>
+                    I'm experienced with HTML, CSS, and JS including JQuery. While my background is more in coding, I take a design-first approach and build the site's aesthetics in Photoshop (or similar) first and then approach the code from there.
+                </p>
+                <p>
+                    I'm also somewhat familiar with using Electron for desktop web applications, and I've used ThreeJS to create 3D web art.
+                </p>
+            </div>
+
+            <div class="panel" style="background-image: url('./img/designcomp.jpg');">
+                <h1>Branding</h1>
+                <p>
+                    I've created original brand identities for many of my projects. I try to create contemporary designs that are unique, distinct and strongly recognisable.
+                </p>
+            </div>
+
+            <!-- <div class="panel slab" id="">
+                <div>
+                    <h1>section</h1>
+                    <p>
+                        this is another section. <br>
+                        it's really cool and impressive. <br>
+                        here is a third line.
+                    </p>
+                </div>
+            </div> -->
+
+            
+            <div class="panel slab" id="contact">
+                <div>
+                    <h1>contact me</h1>
+                    <p style="user-select: unset;">
+                        email me at <a href="mailto:declancarveth@gmail.com">declancarveth at gmail.com</a>. <br>
+                        or get in touch on one of my social profiles. <br>
+                        <span class="socials"> <a href="">LinkedIn</a> <a href="https://delcanprobably.itch.io/">Itch.io</a> <a href="https://github.com/delcanprobably">GitHub</a> </div>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footline">
+            <p>declan carveth 2023. or whatever year it is.</p>
+        </div>
+        
+    </body>
+</html>

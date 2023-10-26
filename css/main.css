@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    --slant-amount: 5vw;
+}
+
+body {
+    background-color: #496ee7;
+    font-family: 'Inter';
+}
+
+a, a:visited {
+    color: white;
+}
+
+.header {
+    position: fixed;
+    z-index: 1;
+    width: auto;
+    left: 0;
+    right: 0;
+    background-color: rgba(73, 110, 231, 1);
+    color: white;
+    font-weight: 900;
+    padding: 50px 10vw;
+    clip-path: polygon(0 0, 100% 0%, 100% calc(100% - var(--slant-amount)), 0 100%);
+    white-space: nowrap;
+    user-select: none;
+    overflow: hidden;
+
+    /* Chrome is very stupid and requires this to be on the unscrolled header too, otherwise clip-path doesn't work for some reason */
+    backdrop-filter: blur(10px) saturate(0.3) brightness(1.2);
+}
+
+.scrolled .header {
+    padding: 10px 10vw;
+    background-color: rgba(73, 110, 231, 0.8);
+    backdrop-filter: blur(10px) saturate(0.3) brightness(1.2);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.header h1 {
+    font-size: 80px;
+    text-transform: lowercase;
+    display: inline;
+    
+}
+
+.scrolled .header h1 {
+    font-size: 30px;
+}
+
+.header h2 {
+    display: inline;
+    font-size: 24px;
+}
+
+.scrolled .header h2 {
+    font-size: 14px;
+}
+
+.header .nav {
+    display: block;
+    line-height: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.scrolled .header .nav {
+    margin-top: 5px;
+}
+
+.header .nav a {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+    margin-right:3px;
+}
+.header .nav a:hover  {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.header .nav a.inNavZone  {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Scroll transition times */
+.scrolled .header, .scrolled .header .nav, .scrolled .header h1, .scrolled .header h2 {
+    transition: 0.4s;
+}
+
+.header, .header .nav, .header h1, .header h2 {
+    transition: 0.4s;
+}
+
+.panel {
+    min-height: 600px;
+    margin-bottom: calc(0vw - var(--slant-amount) - 1px);
+    padding: calc(var(--slant-amount)/2 + 50px) 10vw;
+    
+    background-color: #496ee7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+
+.panel:nth-child(odd) {
+    /* padding-top: calc(var(--slant-amount) * 2 + 10px); */
+    clip-path: polygon(0 var(--slant-amount), 100% 0, 100% 100%, 0 calc(100% - var(--slant-amount)));
+}
+
+.panel:nth-child(even) {
+    clip-path: polygon(0 0, 100% var(--slant-amount), 100% calc(100% - var(--slant-amount)), 0 100%);
+}
+
+.panel:first-child {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--slant-amount)));
+    padding-top: 240px;
+}
+
+.panel h1 {
+    display: block;
+    width: fit-content;
+    padding: 22px;
+    /* descenders were looking a bit funky*/
+    padding-bottom: 10px; 
+    margin-bottom: 10px;
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+
+    font-size: 100px;
+    text-transform: lowercase;
+    user-select: none;
+
+}
+
+.panel p {
+    display: block;
+    width: fit-content;
+    max-width: 800px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px) saturate(0.8);
+    color: white;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+.panel > a {
+    display: inline-flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 15px;
+    margin-right: 4px;
+    margin-bottom: 50px; /* increases gap for long paragraph panels */
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.5);
+    transform: scale(1);
+    transition: 0.2s;
+    font-weight: bold;
+    /* Default background colour */
+    background-color: #999;
+
+}
+
+.panel > a:hover {
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    transform: scale(1.1);
+}
+
+.panel > a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top:0%;
+    left: 0%;
+    background: linear-gradient(to bottom, white 0%, transparent 100%);
+    height: 100%;
+    width: 100%;
+    opacity: 0.25;
+    transition: 0.2s;
+}
+
+.panel > a:hover::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top:0%;
+    left: 0%;
+    background: linear-gradient(to bottom, white 0%, rgba(255,255,255,0.2) 100%);
+    height: 100%;
+    width: 100%;
+    opacity: 0.45;
+}
+
+/* SLAB Panels - for titles etc */
+
+.panel.slab {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 400px;
+    background-color: black;    
+}
+
+.panel.slab h1{
+    display: inline;
+    font-size: 150px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: 10px;
+    text-transform: lowercase;
+}
+.panel.slab p {
+    display: inline-block;
+    /* use preset width for all so that all subtitles wrap at the same screen width */
+    padding: 0;
+    width: 500px; 
+    max-width: unset;
+    align-self: flex-end;
+    background: none;
+    backdrop-filter: none;
+    text-align: left;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: italic;
+    user-select: none;
+}
+
+.panel#hovergallery {
+    transition: background-image 0.2s;
+    background-color: black;
+}
+
+.panel#hovergallery p {
+    transform: translateX(0);
+    transition: transform 0.5s;
+}
+
+.panel#hovergallery .lastHovered {
+    transform: translateX(20px);
+}
+
+::selection {
+    background-color: rgba(255, 255, 255, .3);
+
+}
+
+.footline {
+    display: flex;
+    position: block;
+    height: var(--slant-amount);
+    padding-left: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+.footline p {
+    display: inline-block;
+    align-self: flex-end;
+    margin-bottom: 30px;
+}
+
+/* External link icon */
+a[target="_blank"]::after {
+    content: url('../img/ext.png');
+    margin: 0 3px 0 5px;
+    
+}
