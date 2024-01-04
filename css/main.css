@@ -148,6 +148,9 @@ a, a:visited {
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px) saturate(0.8);
     color: white;
+}
+
+.panel:not(.slab) p {
     text-shadow: 0 1px 5px rgba(0,0,0,0.9);
 }
 
@@ -258,7 +261,7 @@ a, a:visited {
     display: flex;
     position: block;
     height: var(--slant-amount);
-    padding-left: 40px;
+    padding: 0 40px;
     color: white;
     font-size: 16px;
     font-weight: 300;
@@ -269,9 +272,32 @@ a, a:visited {
     margin-bottom: 30px;
 }
 
+.footline.r {
+    text-align: center;
+    flex-direction: column-reverse;
+}
+
 /* External link icon */
 a[target="_blank"]::after {
     content: url('../img/ext.png');
     margin: 0 3px 0 5px;
     
+}
+
+/* Social icons */
+.socials a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    margin-left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
 }
