@@ -289,8 +289,18 @@ a[target="_blank"]::after {
 }
 
 /* Social icons */
+
+.socials {
+    user-select: none;
+}
+
+.socials:has(> a:hover) a:not(:hover) {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
 .socials a {
-    display: inline-block;
+    display: inline-flex;
     width: 25px;
     height: 25px;
     margin: 3px;
@@ -300,8 +310,37 @@ a[target="_blank"]::after {
     background-position: center center;
     transform: scale(1);
     transition: 0.2s;
+    color:rgba(0,0,0,0);
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .socials a:hover {
     transform: scale(1.2);
+    opacity: 1;
+}
+
+.socials a span {
+    content: " ";
+    color:white;
+    font-style: normal;
+    font-weight: 400;
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    height: 30px;
+    top: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    filter:blur(5px);
+}
+
+.socials a:hover span {
+    opacity: 1;
+    top:30px;
+    filter:blur(0);
 }
