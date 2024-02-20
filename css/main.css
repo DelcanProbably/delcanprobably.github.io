@@ -158,7 +158,42 @@ a, a:visited {
     text-shadow: 0 1px 5px rgba(0,0,0,0.9);
 }
 
-.panel > a {
+.panel .columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.panel .columns > div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.panel .columns iframe {
+    flex-grow: 1;
+    height: 400px;
+    max-width: 800px;
+}
+
+.imggrid {
+    display: flex;
+    flex: 30%;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.imggrid div {
+    flex: 50%;
+    max-width: 50%;
+}
+
+.imggrid div img {
+    width: 95%;
+    vertical-align: middle;
+    padding: 5%;
+    padding-top: 0;
+}
+
+/* Call to action buttons */
+.panel > a, .panel div > a {
     display: inline-flex;
     position: relative;
     width: auto;
@@ -177,13 +212,13 @@ a, a:visited {
 
 }
 
-.panel > a:hover {
+.panel > a:hover, .panel div > a:hover {
     box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
     z-index: 1;
     transform: scale(1.1);
 }
 
-.panel > a::before {
+.panel > a::before, .panel div > a::before {
     content: "";
     position: absolute;
     display: block;
@@ -196,7 +231,7 @@ a, a:visited {
     transition: 0.2s;
 }
 
-.panel > a:hover::before {
+.panel > a:hover::before, .panel div > a:hover::before {
     content: "";
     position: absolute;
     display: block;
