@@ -168,7 +168,7 @@ a, a:visited {
     margin-right: 10px;
 }
 
-.panel .columns iframe {
+.panel .columns iframe, .panel .columns lite-youtube {
     flex-grow: 1;
     height: 400px;
     max-width: 800px;
@@ -250,7 +250,12 @@ a, a:visited {
     flex-wrap: wrap;
     align-content: center;
     height: 400px;
+    width: auto;
     background-color: black;    
+}
+
+.panel.slab > div {
+    width: 100%;
 }
 
 .panel.slab h1{
@@ -265,8 +270,7 @@ a, a:visited {
     display: inline-block;
     /* use preset width for all so that all subtitles wrap at the same screen width */
     padding: 0;
-    width: 500px; 
-    max-width: unset;
+    max-width: fit-content;
     align-self: flex-end;
     background: none;
     backdrop-filter: none;

@@ -16,6 +16,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+        <!-- lazy YouTube load facade thing cause YouTube was about 75% of my pageload time lol i love webdev -->
+        <link rel="stylesheet" href="js/lib/lite-yt-embed.css">
+        <script src="js/lib/lite-yt-embed.js"></script>
         
         
     </head>
@@ -35,16 +39,19 @@
 
         <div class="content">
             <div class="panel" style="background-image: url('./img/me.jpg');" id="top">
-                <h1>heya</h1>
+                <h1>heya!</h1>
                 <p>
-                    I'm Declan and I make games. I've been interested in games design and development as long as I can remember and carried that passion through to my career. In 2023, I graduated my Bachelor of Science in Games Development at the University of Technology Sydney (UTS) with distinction. (<a href="https://bsc.declancarveth.com/">See my academic record here</a>)
+                    I'm Declan and I make games. I've been interested in games design and development as long as I can remember and carried that passion through to my career. This is a webzone I made to document the games and other cool things I've made.
                 </p>
                 <p>
-                    What I love about game development is how we get to combine problem-solving and engineering with creativity and imagination to create fun and immersive experiences!
+                    I'm currently a Master's by Research candidate at UTS, researching accessibility issues in games. <a href="https://www.youtube.com/watch?v=FCQFbi3biIU" target="_blank">I'm also working on a solo indie project releasing soon on Steam!</a>
                 </p>
                 <p>
-                    This is a webzone I made to document the games and many other things I've made on a computer.
-                </p> 
+                    In 2023, I graduated my Bachelor of Science in Games Development at the University of Technology Sydney (UTS) with distinction. (<a href="https://bsc.declancarveth.com/">See my academic record here</a>)
+                </p>
+                <p>
+                    I love that game development lets us combine problem-solving and engineering with imagination to create fun and immersive experiences!
+                </p>
             </div>
             
             <div class="panel slab" id="games">
@@ -79,7 +86,8 @@
                             The original version of this game was featured in the <a href="https://showcase.gamesstudio.org/autumn-2022/" target="_blank">Autumn 2022 UTS Games Showcase</a> and we won the <a href="https://www.gamesstudio.org/articles/winners-6th-annual-uts-student-games-showcase" target="_blank">People's Choice award</a>.
                         </p>
                     </div>
-                    <iframe src="https://www.youtube.com/embed/i984j-MjHsc?si=giH80-XUs_1AGdEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <lite-youtube videoid="i984j-MjHsc"></lite-youtube>
+                    <!-- <iframe src="https://www.youtube.com/embed/?si=giH80-XUs_1AGdEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
                 </div>
                 <a href="https://youtu.be/i984j-MjHsc" style="background-color: #41bd2b;" target="_blank">
                     Trailer
@@ -111,7 +119,7 @@
                         </p>
                     </div>
 
-                    <iframe src="https://www.youtube.com/embed/Ka4pO-Zzc0M?si=FkJ0RaMoLZthqfb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <lite-youtube videoid="Ka4pO-Zzc0M"></lite-youtube>
                     
 
                 </div>
@@ -193,7 +201,7 @@
                         </a>
                         
                     </div>
-                    <iframe src="https://www.youtube.com/embed/cwvcIaCkeoE?si=1nAbNwJtXO3qFI0j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <lite-youtube videoid="cwvcIaCkeoE"></lite-youtube>
                 </div>
                 
             </div>
@@ -283,8 +291,9 @@
                 <p>Prior to <a href="#_apryl">Apryl</a> starting up I released music as Delcan, and continue to use that name to publish music content on my YouTube channel from time-to-time. I'll likely have many other music projects going on in the future.</p>
                 
                 <iframe style="border: 0; width: 400px; height: 300px;" src="https://bandcamp.com/EmbeddedPlayer/album=353980566/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://delcanprobably.bandcamp.com/album/album-2">Album 2 by Delcan</a></iframe>
+                <lite-youtube videoid="LY5H3gSPS-8" style="width: 430px; height: 300px; display: inline-block;"></lite-youtube>
                 
-                <iframe width="430" height="300" src="https://www.youtube-nocookie.com/embed/LY5H3gSPS-8?si=d2ZwuhrynvofNOFT&amp;start=136" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <!-- <iframe width="430" height="300" src="https://www.youtube-nocookie.com/embed/LY5H3gSPS-8?si=d2ZwuhrynvofNOFT&amp;start=136" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
                 
                 <br><br>
                 
@@ -365,7 +374,7 @@
                             <a href="https://delcanprobably.itch.io/" style="background-image: url('./img/socials/itchio.png');"> <span>itch.io</span> </a> 
                             <a href="https://www.linkedin.com/in/declancarveth/" style="background-image: url('./img/socials/linkedin.png');"> <span>Linkedin</span> </a> 
                             <a href="https://www.youtube.com/@delcanprobably" style="background-image: url('./img/socials/yt.png');"> <span>YouTube<br>(Personal)</span> </a>
-                            <!-- <a href="https://medium.com/@delcanprobably" style="background-image: url('./img/socials/medium.png');"></a>  -->
+                            <a href="https://medium.com/@delcanprobably" style="background-image: url('./img/socials/medium.png');"> <span>Medium</span> </a> 
                         </span>
                     </p>
                 </div>
