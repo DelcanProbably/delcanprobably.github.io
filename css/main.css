@@ -50,13 +50,23 @@ a, a:visited {
     font-size: 30px;
 }
 
+.header span {
+    display: inline-block;
+    line-height: 1;
+    transition: line-height 0.2s;
+}
+
+.scrolled .header span {
+    line-height: 0.7;
+}
+
 .header h2 {
     display: inline;
     font-size: 24px;
 }
 
 .scrolled .header h2 {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .header .nav {
@@ -280,6 +290,20 @@ a, a:visited {
     font-style: italic;
     user-select: none;
 }
+.panel:not(.slab) p.skills {
+    text-shadow: none;
+}
+
+.skills span {
+    background-color: #454545;
+    color: white;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+}
 
 .panel#hovergallery {
     transition: background-image 0.2s;
@@ -369,7 +393,7 @@ a[target="_blank"]::after {
     position: absolute;
     display: inline-block;
     text-align: center;
-    width: auto;
+    width: 200px;
     height: 30px;
     top: 50px;
     opacity: 0;
