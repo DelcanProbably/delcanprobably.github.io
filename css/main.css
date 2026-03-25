@@ -7,6 +7,17 @@
 body {
     background-color: #496ee7;
     font-family: 'Inter';
+    font-size: 0.108vh; 
+    /* 0.108 = 1 / 930  */
+    /* 930px is roughly the height of the 1080p browser viewport that I designed the website on */
+    /* this small bit of ugliness allows the rest of the website to use 'em' in place of 'px' and it all works nicely */
+    /* notably unless it's a child element of something with its own font-size..... the one fatal flaw */
+
+    --scalemult: 0.108; /* this can be used with a calc for hairy child element situations */
+}
+
+p {
+    font-size: 16em;
 }
 
 a, a:visited {
@@ -22,32 +33,32 @@ a, a:visited {
     background-color: rgba(73, 110, 231, 1);
     color: white;
     font-weight: 900;
-    padding: 50px 10vw;
+    padding: 50em 10vw;
     clip-path: polygon(0 0, 100% 0%, 100% calc(100% - var(--slant-amount)), 0 100%);
     white-space: nowrap;
     user-select: none;
     overflow: hidden;
 
     /* Chrome is very stupid and requires this to be on the unscrolled header too, otherwise clip-path doesn't work for some reason */
-    backdrop-filter: blur(10px) saturate(0.3) brightness(1.2);
+    backdrop-filter: blur(10em) saturate(0.3) brightness(1.2);
 }
 
 .scrolled .header {
-    padding: 10px 10vw;
+    padding: 10em 10vw;
     background-color: rgba(73, 110, 231, 0.8);
-    backdrop-filter: blur(10px) saturate(0.3) brightness(1.2);
+    backdrop-filter: blur(10em) saturate(0.3) brightness(1.2);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .header h1 {
-    font-size: 80px;
+    font-size: 80em;
     text-transform: lowercase;
     display: inline;
     
 }
 
 .scrolled .header h1 {
-    font-size: 30px;
+    font-size: 30em;
 }
 
 .header span {
@@ -57,43 +68,52 @@ a, a:visited {
 }
 
 .scrolled .header span {
-    line-height: 0.7;
+    margin-left:2em;
+    line-height: 1;
 }
 
 .header h2 {
     display: inline;
-    font-size: 24px;
+    font-size: 24em;
 }
 
 .scrolled .header h2 {
-    font-size: 12px;
+    font-size: 11em;
 }
 
 .header .nav {
     display: block;
     line-height: 0;
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5em;
 }
 
 .scrolled .header .nav {
-    margin-top: 5px;
+    margin-top: 5em;
 }
 
 .header .nav a {
-    font-size: 18px;
+    font-size: 18em;
+    font-weight: 400;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.2s;
-    margin-right:3px;
+    transition: color 0.2s;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
 }
+
+.scrolled .header .nav a {
+    margin-left: 0em;
+}
+
 .header .nav a:hover  {
     color: rgba(255, 255, 255, 0.8);
 }
 
 .header .nav a.inNavZone  {
     color: rgba(255, 255, 255, 1);
+    font-weight: 600;
 }
 
 /* Scroll transition times */
@@ -105,10 +125,12 @@ a, a:visited {
     transition: 0.4s;
 }
 
+/* PANELS */
+
 .panel {
-    min-height: 600px;
-    margin-bottom: calc(0vw - var(--slant-amount) - 1px);
-    padding: calc(var(--slant-amount)/2 + 50px) 10vw;
+    min-height: 300em;
+    margin-bottom: calc(0vw - var(--slant-amount) - 1em);
+    padding: calc(var(--slant-amount)/2 + 50em) 10vw;
     
     background-color: #496ee7;
     background-repeat: no-repeat;
@@ -129,43 +151,45 @@ a, a:visited {
 
 .panel:first-child {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--slant-amount)));
-    padding-top: 240px;
+    padding-top: 240em;
 }
 
 .panel h1 {
     display: block;
     width: fit-content;
-    padding: 22px;
+    padding: calc(22vh * var(--scalemult));
     /* descenders were looking a bit funky*/
-    padding-bottom: 10px; 
-    margin-bottom: 10px;
-    margin-top: 40px;
+    padding-bottom: calc(10vh * var(--scalemult));
+    margin-bottom: calc(10vh * var(--scalemult));
+    margin-top: calc(40vh * var(--scalemult));
     background-color: black;
     color: white;
 
-    font-size: 100px;
+    font-size: 100em;
     text-transform: lowercase;
     user-select: none;
 
 }
 
+/* annnnd this is where the fatal flaw of this whole em business comes in.... */
+
 .panel p {
     display: block;
     width: fit-content;
-    max-width: 800px;
-    padding: 15px 20px;
-    margin-bottom: 10px;
+    max-width: calc(800em / 16);
+    padding: calc(15em / 16) calc(20em / 16);
+    margin-bottom: calc(10em / 16);
     background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px) saturate(0.8);
+    backdrop-filter: blur(calc(10em / 16)) saturate(0.8);
     color: white;
 }
 
 #top.panel p {
-    max-width: 600px;
+    max-width: calc(600em / 16);
 }
 
 .panel:not(.slab) p {
-    text-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    text-shadow: 0 calc(1em / 16) calc(5em / 16) rgba(0,0,0,0.9);
 }
 
 .panel .columns {
@@ -175,13 +199,13 @@ a, a:visited {
 }
 
 .panel .columns > div:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 10em;
 }
 
 .panel .columns iframe, .panel .columns lite-youtube {
     flex-grow: 1;
-    height: 400px;
-    max-width: 800px;
+    height: 400em;
+    max-width: 800em;
 }
 
 .imggrid {
@@ -208,12 +232,13 @@ a, a:visited {
     position: relative;
     width: auto;
     height: auto;
-    padding: 15px;
-    margin-right: 4px;
-    margin-bottom: 50px; /* increases gap for long paragraph panels */
+    font-size: 16em;
+    padding: calc(15vh * var(--scalemult));
+    margin-right: calc(4vh * var(--scalemult));
+    margin-bottom: calc(50vh * var(--scalemult)); /* increases gap for long paragraph panels */
     color: white;
     text-decoration: none;
-    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 0 calc(10vh * var(--scalemult)) calc(-2vh * var(--scalemult)) rgba(0,0,0,0.5);
     transform: scale(1);
     transition: 0.2s;
     font-weight: bold;
@@ -223,7 +248,7 @@ a, a:visited {
 }
 
 .panel > a:hover, .panel div > a:hover {
-    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: 0 calc(3vh * var(--scalemult)) calc(15vh * var(--scalemult)) 0 rgba(0,0,0,0.5);
     z-index: 1;
     transform: scale(1.1);
 }
@@ -259,7 +284,7 @@ a, a:visited {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    height: 400px;
+    height: 400em;
     width: auto;
     background-color: black;    
 }
@@ -270,10 +295,10 @@ a, a:visited {
 
 .panel.slab h1{
     display: inline;
-    font-size: 150px;
+    font-size: 150em;
     padding: 0;
     margin-bottom: 0;
-    margin-right: 10px;
+    margin-right: calc(10vh * var(--scalemult));
     text-transform: lowercase;
 }
 .panel.slab p {
@@ -285,7 +310,7 @@ a, a:visited {
     background: none;
     backdrop-filter: none;
     text-align: left;
-    font-size: 19px;
+    font-size: 19em; /*calc(19vh * var(--scalemult));*/
     font-weight: bold;
     font-style: italic;
     user-select: none;
@@ -298,9 +323,9 @@ a, a:visited {
     background-color: #454545;
     color: white;
     display: inline-block;
-    padding: 4px 8px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: calc(4vh * var(--scalemult)) calc(8vh * var(--scalemult));
+    border-radius: calc(20vh * var(--scalemult));
+    font-size: calc(12vh * var(--scalemult));
     font-style: normal;
     font-weight: normal;
 }
@@ -316,7 +341,7 @@ a, a:visited {
 }
 
 .panel#hovergallery .lastHovered {
-    transform: translateX(20px);
+    transform: translateX(calc(20vh * var(--scalemult)));
 }
 
 ::selection {
@@ -328,26 +353,25 @@ a, a:visited {
     display: flex;
     position: block;
     height: var(--slant-amount);
-    padding: 0 40px;
+    padding: 0 40em;
     color: white;
-    font-size: 16px;
     font-weight: 300;
 }
 .footline p {
     display: inline-block;
     align-self: flex-end;
-    margin-bottom: 30px;
+    margin-bottom: calc(30vh * var(--scalemult));
 }
 
 .footline.r {
-    text-align: center;
+    text-align: right;
     flex-direction: column-reverse;
 }
 
 /* External link icon */
 a[target="_blank"]::after {
     content: url('../img/ext.png');
-    margin: 0 3px 0 5px;
+    margin: 0 calc(3vh * var(--scalemult)) 0 calc(5vh * var(--scalemult));
     
 }
 
@@ -364,9 +388,10 @@ a[target="_blank"]::after {
 
 .socials a {
     display: inline-flex;
-    width: 25px;
-    height: 25px;
-    margin: 3px;
+    font-size: calc(1vh * var(--scalemult));
+    width: 25em;
+    height: 25em;
+    margin: 3em;
     margin-left: 0;
     background-size: contain;
     background-repeat: no-repeat;
@@ -393,17 +418,18 @@ a[target="_blank"]::after {
     position: absolute;
     display: inline-block;
     text-align: center;
-    width: 200px;
-    height: 30px;
-    top: 50px;
+    width: calc(200vh * var(--scalemult));
+    height: calc(30vh * var(--scalemult));
+    top: calc(50vh * var(--scalemult));
     opacity: 0;
     pointer-events: none;
     transition: 0.2s;
-    filter:blur(5px);
+    filter:blur(calc(5vh * var(--scalemult)));
+    font-size: 16em;
 }
 
 .socials a:hover span {
     opacity: 1;
-    top:30px;
+    top: calc(30vh * var(--scalemult));
     filter:blur(0);
 }
