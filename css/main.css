@@ -312,7 +312,7 @@ a, a:visited {
     text-align: left;
     font-size: 19em; /*calc(19vh * var(--scalemult));*/
     font-weight: bold;
-    font-style: italic;
+    font-style: normal;
     user-select: none;
 }
 .panel:not(.slab) p.skills {

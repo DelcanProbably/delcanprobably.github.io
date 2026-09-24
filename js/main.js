@@ -87,12 +87,14 @@ $(document).ready( () => {
   });
 
   // dynamically generate email address at runtime to avoid those bastard scrapers
-  var mail = $('a.email');
-  var href = mail.attr('href').replace('.', '@gmail.com');
-  var cont = mail.text().replace(' at ', '@');
-  mail.attr('href', href);
-  mail.text(cont);
-  console.log("replaced href with " + href);
+  emails = document.getElementsByClassName("email");
+  for (var i = 0; i < emails.length; i++) {
+    element = emails[i];
+    var href = element.href.replace('.', '@gmail.com');
+    var cont = element.textContent.replace(' at ', '@');
+    element.href = href;
+    element.textContent = cont;
+  }
 
 });
 
