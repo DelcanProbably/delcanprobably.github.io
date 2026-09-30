@@ -232,16 +232,23 @@ a, a:visited {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    columns: 2;
 }
 
 .panel .columns > div:not(:last-child) {
     margin-right: 10em;
+    flex: 2;
+}
+.panel .columns > div:last-child {
+    flex: 1;
 }
 
 .panel .columns iframe, .panel .columns lite-youtube {
     flex-grow: 1;
-    height: 400em;
+    height: 300em;
     max-width: 800em;
+    margin-bottom: 10em;
+    border-radius: 1vh;
 }
 
 .imggrid {
