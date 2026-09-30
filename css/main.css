@@ -16,6 +16,17 @@ body {
     --scalemult: 0.108; /* this can be used with a calc for hairy child element situations */
 }
 
+@keyframes coverfade {
+    0% {
+        background-color: rgba(73, 110, 231, 1);
+        backdrop-filter: blur(2vh) grayscale(100%);
+    }
+    100% {
+        background-color: rgba(73, 110, 231, 0);
+        backdrop-filter: blur(0) grayscale(0);
+    }
+}
+
 p {
     font-size: 16em;
 }
@@ -26,7 +37,7 @@ a, a:visited {
 
 .header {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: auto;
     left: 0;
     right: 0;
@@ -155,20 +166,42 @@ a, a:visited {
 }
 
 .panel h1 {
-    display: block;
+    display: inline-block;
     width: fit-content;
-    padding: calc(22vh * var(--scalemult));
-    /* descenders were looking a bit funky*/
-    padding-bottom: calc(10vh * var(--scalemult));
     margin-bottom: calc(10vh * var(--scalemult));
     margin-top: calc(40vh * var(--scalemult));
-    background-color: black;
     color: white;
-
+    
     font-size: 100em;
     text-transform: lowercase;
     user-select: none;
+    padding-bottom: calc(10vh * var(--scalemult));  
+}
 
+.panel h1 span {
+    padding: calc(22vh * var(--scalemult));
+    padding-bottom: calc(10vh * var(--scalemult));
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1vh);
+    line-height: 1.6em;
+    border-radius: 1vh;
+    box-decoration-break: clone;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.6vh 0.3vh;
+}
+
+.blurcover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    backdrop-filter: 0;
+    animation-name: coverfade;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier();
+    animation-iteration-count: 1;
+    background-blend-mode: multiply;
 }
 
 /* annnnd this is where the fatal flaw of this whole em business comes in.... */
@@ -181,6 +214,8 @@ a, a:visited {
     margin-bottom: calc(10em / 16);
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(calc(10em / 16)) saturate(0.8);
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.6vh 0.3vh;
     color: white;
 }
 
@@ -293,6 +328,11 @@ a, a:visited {
     width: 100%;
 }
 
+/* right side div */
+.panel.slab > div > div {
+    display: inline-block;
+}
+
 .panel.slab h1{
     display: inline;
     font-size: 150em;
@@ -310,10 +350,13 @@ a, a:visited {
     background: none;
     backdrop-filter: none;
     text-align: left;
-    font-size: 19em; /*calc(19vh * var(--scalemult));*/
+    font-size: 18em; /*calc(19vh * var(--scalemult));*/
     font-weight: bold;
     font-style: normal;
     user-select: none;
+
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
 }
 .panel:not(.slab) p.skills {
     text-shadow: none;
@@ -328,6 +371,7 @@ a, a:visited {
     font-size: calc(12vh * var(--scalemult));
     font-style: normal;
     font-weight: normal;
+    margin-right: 0.5em;
 }
 
 .panel#hovergallery {
@@ -360,10 +404,10 @@ a, a:visited {
 .footline p {
     display: inline-block;
     align-self: flex-end;
-    margin-bottom: calc(30vh * var(--scalemult));
+    margin-bottom: calc(20vh * var(--scalemult));
 }
 
-.footline.r {
+.footline:nth-child(even) {
     text-align: right;
     flex-direction: column-reverse;
 }
