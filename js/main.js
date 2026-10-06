@@ -51,7 +51,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 // Light up navigation sections complementing scrolling
 
-sections = ["top", "games", "audio", "design", "contact"];
+sections = ["top", "games", "a11y", "audio", "contact"];
 sectionScrollPoints = [];
 
 lastHovered = "";

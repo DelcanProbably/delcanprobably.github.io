@@ -109,7 +109,7 @@ a, a:visited {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 0.2s;
+    transition: color 0.2s, margin-left 0.4s;
     margin-left: 0.2em;
     margin-right: 0.2em;
 }
@@ -142,6 +142,7 @@ a, a:visited {
     min-height: 300em;
     margin-bottom: calc(0vw - var(--slant-amount) - 1em);
     padding: calc(var(--slant-amount)/2 + 50em) 10vw;
+    padding-bottom: calc(130vh * var(--scalemult));
     
     background-color: #496ee7;
     background-repeat: no-repeat;
@@ -165,7 +166,7 @@ a, a:visited {
     padding-top: 240em;
 }
 
-.panel h1 {
+.panel h1, h2 {
     display: inline-block;
     width: fit-content;
     margin-bottom: calc(10vh * var(--scalemult));
@@ -178,15 +179,26 @@ a, a:visited {
     padding-bottom: calc(10vh * var(--scalemult));  
 }
 
-.panel h1 span {
+.panel h2 {
+    font-size: 50em;
+    text-shadow: 0 0 2vh black;
+    margin-top: 0.5em;
+}
+
+.panel h1 span, .panel h2 span {
     padding: calc(22vh * var(--scalemult));
     padding-bottom: calc(10vh * var(--scalemult));
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(1vh);
     line-height: 1.6em;
     border-radius: 1vh;
     box-decoration-break: clone;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.6vh 0.3vh;
+}
+.panel h2 span {
+    background-color: rgba(0, 0, 0, 0);
+    padding-top: calc(11vh * var(--scalemult));
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.8vh 0.3vh;
 }
 
 .blurcover {
@@ -261,12 +273,18 @@ a, a:visited {
     flex: 50%;
     max-width: 50%;
 }
-
+/* this works really stupidly and i could improve this cause I know flex boxes better now */
 .imggrid div img {
-    width: 95%;
+    width: 100%;
     vertical-align: middle;
     padding: 5%;
     padding-top: 0;
+}
+.imggrid div:first-child img {
+    padding-left: 0;
+}
+.imggrid div:last-child img {
+    padding-right: 0;
 }
 
 /* Call to action buttons */
@@ -278,7 +296,7 @@ a, a:visited {
     font-size: 16em;
     padding: calc(15vh * var(--scalemult));
     margin-right: calc(4vh * var(--scalemult));
-    margin-bottom: calc(50vh * var(--scalemult)); /* increases gap for long paragraph panels */
+    /* moving to overall content for 2026 update >>> margin-bottom: calc(50vh * var(--scalemult)); /* increases gap for long paragraph panels */
     color: white;
     text-decoration: none;
     box-shadow: 0 0 calc(10vh * var(--scalemult)) calc(-2vh * var(--scalemult)) rgba(0,0,0,0.5);
@@ -286,7 +304,7 @@ a, a:visited {
     transition: 0.2s;
     font-weight: bold;
     /* Default background colour */
-    background-color: #999;
+    background-color: #496ee7;
 
 }
 
@@ -381,6 +399,8 @@ a, a:visited {
     font-weight: normal;
     margin-right: 0.5em;
     margin-bottom: 0.8em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0.1vh 0.6vh 0.3vh;
+    user-select: none;
 }
 
 .panel#hovergallery {
@@ -413,10 +433,10 @@ a, a:visited {
 .footline p {
     display: inline-block;
     align-self: flex-end;
-    margin-bottom: calc(20vh * var(--scalemult));
+    margin-bottom: calc(25vh * var(--scalemult));
 }
 
-.footline:nth-child(even) {
+.footline:nth-child(odd) {
     text-align: right;
     flex-direction: column-reverse;
 }
@@ -485,4 +505,9 @@ a[target="_blank"]::after {
     opacity: 1;
     top: calc(30vh * var(--scalemult));
     filter:blur(0);
+}
+
+div.spacer {
+    display: block;
+    height: 4vh;
 }
