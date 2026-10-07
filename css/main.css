@@ -190,6 +190,7 @@ a, a:visited {
     font-size: 50em;
     text-shadow: 0 0 2vh black;
     margin-top: 0.5em;
+    line-height: 1.8;
 }
 
 .panel h1 span, .panel h2 span {

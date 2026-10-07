@@ -85,6 +85,17 @@ $(document).ready( () => {
       });
     })
   });
+  
+  $('.hoverimg').each( (index, element) => {
+    var hoverArea = $(element);
+    var owner = hoverArea.parentsUntil(".content").filter(".panel");
+    console.log(owner);
+    $(hoverArea).mouseenter(() => {
+      var imgPath = "url(../img/" + $(hoverArea).attr('id') + ".jpg)";
+      owner.css('background-image', imgPath);
+    });
+
+  });
 
   // dynamically generate email address at runtime to avoid those bastard scrapers
   emails = document.getElementsByClassName("email");
