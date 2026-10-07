@@ -14,6 +14,8 @@ body {
     /* notably unless it's a child element of something with its own font-size..... the one fatal flaw */
 
     --scalemult: 0.108; /* this can be used with a calc for hairy child element situations */
+
+    overflow-x: hidden;
 }
 
 @keyframes coverfade {
@@ -150,6 +152,8 @@ a, a:visited {
     background-position: center center;
     background-attachment: fixed;
     
+    /* for small mode */
+    transition: padding 0.2s, padding-bottom 0.2s;
 }
 
 .panel:nth-child(odd) {
@@ -164,6 +168,7 @@ a, a:visited {
 .panel:first-child {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--slant-amount)));
     padding-top: 240em;
+    transition: padding-top 0.2s;
 }
 
 .panel h1, h2 {
@@ -177,6 +182,8 @@ a, a:visited {
     text-transform: lowercase;
     user-select: none;
     padding-bottom: calc(10vh * var(--scalemult));  
+
+    transition: font-size 0.2s;
 }
 
 .panel h2 {
@@ -225,11 +232,14 @@ a, a:visited {
     max-width: calc(800em / 16);
     padding: calc(15em / 16) calc(20em / 16);
     margin-bottom: calc(10em / 16);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(calc(10em / 16)) saturate(0.8);
     border-radius: 1vh;
     box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.6vh 0.3vh;
     color: white;
+    hyphens: auto;
+    text-justify: inter-word;
+    text-align: justify;
 }
 
 #top.panel p {
@@ -237,7 +247,7 @@ a, a:visited {
 }
 
 .panel:not(.slab) p {
-    text-shadow: 0 calc(1em / 16) calc(5em / 16) rgba(0,0,0,0.9);
+    text-shadow: 0 calc(1em / 16) calc(5em / 24) rgba(0,0,0,1);
 }
 
 .panel .columns {
