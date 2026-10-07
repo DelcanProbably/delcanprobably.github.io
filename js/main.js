@@ -85,6 +85,16 @@ $(document).ready( () => {
       });
     })
   });
+
+  // dynamically generate email address at runtime to avoid those bastard scrapers
+  emails = document.getElementsByClassName("email");
+  for (var i = 0; i < emails.length; i++) {
+    element = emails[i];
+    let href = element.href.replace('.', '@gmail.com');
+    let cont = element.textContent.replace(' at ', '@');
+    element.href = href;
+    element.textContent = cont;
+  }
   
   $('.hoverimg').each( (index, element) => {
     var hoverArea = $(element);
@@ -96,16 +106,6 @@ $(document).ready( () => {
     });
 
   });
-
-  // dynamically generate email address at runtime to avoid those bastard scrapers
-  emails = document.getElementsByClassName("email");
-  for (var i = 0; i < emails.length; i++) {
-    element = emails[i];
-    var href = element.href.replace('.', '@gmail.com');
-    var cont = element.textContent.replace(' at ', '@');
-    element.href = href;
-    element.textContent = cont;
-  }
 
 });
 
