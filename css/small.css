@@ -1,14 +1,25 @@
 
 /* Mobile + narrow screen */
-@media (max-width: 100vh) {
+
+@media (max-width: 150vh) {
+
     .header {
         padding: 0 5vw;
         padding-top: 30em;
         padding-bottom: 35em;
+        transition: padding 0.2s;
     }
     .scrolled .header {
         padding: 10em 5vw;
+        transition: padding 0.2s;
     }
+    .panel {
+        padding: calc(var(--slant-amount)/2 + 50em) 5vw;
+        transition: padding 0.2s;
+    }
+}
+
+@media (max-width: 100vh) {
     .header h1 {
         font-size: 8vw;
     }
@@ -17,9 +28,6 @@
     }
     .header .nav {
         margin-top: 6em;
-    }
-    .panel {
-        padding: calc(var(--slant-amount)/2 + 50em) 5vw;
     }
     .panel .columns {
         flex-direction: column;
