@@ -239,6 +239,7 @@ a, a:visited {
     box-shadow: rgba(0, 0, 0, 0.1) 0 0.1vh 0.6vh 0.3vh;
     color: white;
     hyphens: auto;
+    hyphenate-limit-chars: 6 3 2;
     text-justify: inter-word;
     text-align: justify;
 }
